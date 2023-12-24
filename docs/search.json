@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "posts/active-github-2024/index.html",
+    "href": "posts/active-github-2024/index.html",
+    "title": "A goal to be more active on Github in 2024",
+    "section": "",
+    "text": "I was never active on Github. That may sound strange to many, especially given that I’ve been in software for almost 1.5 decade.\nBefore, I was so busy writing close-sourced software products that I didn’t have the time and mind to think about being active on Github. Many of the things I built were/are free to use as a product (such as this old AI tool), but they weren’t open-sourced.\nIn 2024, as I’m back to school and building a new career path, I set a goal to become more active on Github. Given my workload, I want to focus on simple, yet helpful, actions that I can maintain to build up my muscle strength of being active on Github. Some of these actions include: - Share useful AI tools and papers. And write comment on them. - Star the repos I like. - Continue to update and add new content to this Github blog. (And although I’m familiar with Wordpress, which I used for my main blog, I quite enjoyed writing posts like this on Github pages using markdown and Vim.)\nHope to see you around and keep me accountable at this Github blog and my Github repo."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Peter Hoang Github Blog",
+    "section": "",
+    "text": "A goal to be more active on Github in 2024\n\n\n\n\n\n\n\npersonal\n\n\n\n\n\n\n\n\n\n\n\nDec 24, 2023\n\n\nPeter Hoang\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Peter Hoang",
+    "section": "",
+    "text": "Quick intro\nI’m Peter Hoang, an ML/AI Engineer with a product mindset. I’ve been writing software from 2009.\nMy current AI stack is Python-based (Pytorch, Huggingface, …). Other software techs I’ve used, and still being quite productive with, include: Django, Javascript, Html/Css, Postgres, and a little of React Native.\nIn 2024, one of my focuses is to learn to be more active on Github and continue to learn and expand my knowledge of AI and software in general.\n\n\nShort CV\n Below is a brief version of my CV. For my full CV with more details, please check out my Linkedin profile.\n\nSept/2023 -: I started my Msc in CS at Western University, Canada. This marked my full-time study & work on AI. I feel fortunate that this comeback was coincidental with a big wave in Deep learning.\n\n2021 & 2022: I started reviewing key concepts & background Math in AI on a part-time basis. During this time, I did 2 finetuning projects that were quite interesting (See my Linkedin Projects). Reviewing/learning these fundamental knowledge has been instrumental in helping me get up to speed onAI/Deep learning.\n2013 - 2023: I worked on 2 small startup projects, both about SaaS for learning English, targetting the Vietnamese market (initially, but they never managed to expand out of Vietnam). The apps didn’t take off, but the consolation price for me was that the apps, in combination, still attracted more than 1.5 million free users and benefited many who used them. And, I learned (or forced to learn :) a lot about various fields.\n2009 - 2013: I worked as an NLP & software engineer in Singapore.\n2005 - 2009: I did my Bachelor in Computing at NUS, Singapore. And with a minor in Math.\n\n\n\nConnect\nPlease connect with me on Twitter (for sharings on diverse topics) and Linkedin (for sharings on tech-focused topics).\nMy main blog is at peterhung.org where I write in both Vietnamese and English. For English-only articles, please use this link."
+  }
+]

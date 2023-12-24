@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Peter Hoang Github Blog</title>
+<link>https://peterhungh3.github.io/index.html</link>
+<atom:link href="https://peterhungh3.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Sun, 24 Dec 2023 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>A goal to be more active on Github in 2024</title>
+  <dc:creator>Peter Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/active-github-2024/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I was never active on Github. That may sound strange to many, especially given that I’ve been in software for almost 1.5 decade.</p>
+<p>Before, I was so busy writing close-sourced software products that I didn’t have the time and mind to think about being active on Github. Many of the things I built were/are free to use as a product (such as this old <a href="https://vietnameseaccent.com/?r=ph-gh" target="_blank">AI tool</a>), but they weren’t open-sourced.</p>
+<p>In 2024, as <a href="../../about.html#short-cv" target="_blank">I’m back to school</a> and building a new career path, I set a goal to become more active on Github. Given my workload, I want to focus on simple, yet helpful, actions that I can maintain to build up my muscle strength of being active on Github. Some of these actions include: - Share useful AI tools and papers. And write comment on them. - Star the repos I like. - Continue to update and add new content to this Github blog. (And although I’m familiar with Wordpress, which I used for my main blog, I quite enjoyed writing posts like this on Github pages using markdown and Vim.)</p>
+<p>Hope to see you around and keep me accountable at this Github blog and <a href="https://github.com/peterhungh3" target="_blank">my Github repo</a>.</p>
+
+
+
+ ]]></description>
+  <category>personal</category>
+  <guid>https://peterhungh3.github.io/posts/active-github-2024/index.html</guid>
+  <pubDate>Sun, 24 Dec 2023 05:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

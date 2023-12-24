@@ -5,11 +5,11 @@ permalink: /about/
 ---
 
 ### Quick intro
-I'm Peter Hoang, an ML/AI Engineer with a product mindset. I've been writing software from 2009.  
+I'm Peter Hoang, an ML/AI Engineer with a product mindset. I've been writing software from 2009. <img style="height:auto;" alt="Peter Hoang photo" src="https://avatars.githubusercontent.com/u/41604567?v=4" width="140" height="auto" /> 
 
 My current tech stack is Python-based (Pytorch, Huggingface, ...). Other techs I've used, and still sharp, include: Django, Javascript, Html/Css, Postgres, and a little of React Native. 
 
-In 2024, one of my focuses is to learn to be more active on Github. 
+In 2024, one of my focuses is to learn to be more active on <a href="https://github.com/peterhungh3" target="_blank">Github</a>. 
 
 
 ### Short CV

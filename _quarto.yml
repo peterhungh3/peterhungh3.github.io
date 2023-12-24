@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  site-url: "https://peterhungh3.github.io"
+  title: "Peter Hoang Tech Blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: linkedin
+        href: https://www.linkedin.com/in/hunghuuhoang/
+      - icon: twitter
+        href: https://twitter.com/hunghuuhoang
+
+  cookie-consent: true
+  google-analytics: "G-62ZMF18MSP"
+  twitter-card:
+    creator: "@hunghuuhoang"
+  open-graph: true
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+

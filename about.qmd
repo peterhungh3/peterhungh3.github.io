@@ -19,7 +19,7 @@ I'm Peter Hoang, an ML/AI Engineer with a product mindset. I've been writing sof
 
 My current AI stack is Python-based (Pytorch, Huggingface, ...). Other software techs that I'm currently productive with include: Django, Javascript, Html/Css, Postgres, and a little of React Native. 
 
-In 2024, my main focus is continue learning and expanding my knowledge of AI and software in general. And during that process, learning to be <a href="/posts/active-github-2024/" target="_blank">more active on Github</a>.
+In 2024, my main focus is continue learning and expanding my knowledge of AI and software in general. And during that process, learning to be more active on Github.
 
 
 ### Short CV

@@ -10,33 +10,6 @@
 <atom:link href="https://peterhungh3.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sun, 24 Dec 2023 05:00:00 GMT</lastBuildDate>
-<item>
-  <title>A goal to be more active on Github in 2024</title>
-  <dc:creator>Peter Hoang</dc:creator>
-  <link>https://peterhungh3.github.io/posts/active-github-2024/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I was never active on Github. That may sound strange to many, especially given that I’ve been in software for almost 1.5 decade.</p>
-<p>Before, I was busy building software products that I didn’t have the chance to be active on Github.</p>
-<p>In 2024, as <a href="../../about.html#short-cv" target="_blank">I’m back to school</a> to strengthen my AI knowledge and skills, I set a goal to be more intentional about sharing what I know. Given my workload, I want to focus on simple, yet helpful, actions that I can maintain to build up my muscle strength.</p>
-<p>Some simple actions that I can start doing include:</p>
-<ul>
-<li>Share useful AI tools and papers.</li>
-<li>Star the repos I like.</li>
-<li>Continue to update and add new content to this Github blog.</li>
-</ul>
-<p>Hope to see you around at this Github blog and <a href="https://github.com/peterhungh3" target="_blank">my Github repo</a>.</p>
-
-
-
- ]]></description>
-  <category>goal</category>
-  <guid>https://peterhungh3.github.io/posts/active-github-2024/index.html</guid>
-  <pubDate>Sun, 24 Dec 2023 05:00:00 GMT</pubDate>
-</item>
+<lastBuildDate>Tue, 26 Dec 2023 20:53:02 GMT</lastBuildDate>
 </channel>
 </rss>

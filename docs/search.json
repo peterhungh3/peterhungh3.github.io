@@ -1,16 +1,23 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/llm-kv-cache-quantization/index.html",
+    "href": "posts/llm-kv-cache-quantization/index.html",
+    "title": "A good intro to Key-Value Cache and Quantization",
     "section": "",
-    "text": "Quick intro\nI’m Peter Hoang, an ML/AI Engineer with a product mindset. I’ve been writing software from 2009.\nMy current AI stack is Python-based (Pytorch, Huggingface, …). Other software techs that I’m currently productive with include: Django, Javascript, Html/Css, Postgres, and a little of React Native.\nIn 2024, my main focus is continue learning and expanding my knowledge of AI and software in general. And during that process, learning to be more active on Github.\n\n\nShort CV\n Below is a brief version of my CV. For my full CV with more details, please check out my Linkedin profile.\n\n2023 - 2024: I started my Msc in CS at Western University, Canada. This marked my full-time study & work on AI. (I feel fortunate that this comeback was coincidental with a big wave in Deep learning.)\n2021 & 2022: I started reviewing key concepts & background Math in AI on a part-time basis. During this time, I did 2 finetuning projects that were quite interesting (See the Projects Section on my Linkedin). Reviewing/learning these fundamental knowledge has been instrumental in helping me get up to speed onAI/Deep learning.\n2013 - 2023: I worked on 2 small startup projects, both about SaaS for learning English, targetting the Vietnamese market (initially, but they never managed to expand out of Vietnam). The apps didn’t take off, but the consolation price for me was that the apps, in combination, still attracted more than 1.5 million free users and benefited many who used them. And, I learned (and sometimes forced to learn :) a lot about various fields.\n2009 - 2013: I worked as an NLP & software engineer in Singapore.\n2005 - 2009: I did my Bachelor in Computing at NUS, Singapore. And with a minor in Math.\n\n\n\nConnect\nPlease connect with me on Twitter (for sharings on diverse topics) and Linkedin (for sharings on tech-focused topics).\nMy main blog is at peterhung.org where I write, mostly about education, business and life lessons, in both Vietnamese and English. (For a list of articles written in English, please use this link.)"
+    "text": "I stumbled upon these blog posts while trying to read up on Key-Value cache in LLMs. I think they’re short, well-explained and provide a good high-level overivew so I recommend them here.\n\nGood entry for understanding Key-value cache in Transformers: https://huggingface.co/blog/optimize-llm#32-the-key-value-cache (Sept 2023)\nGood entry for understanding quantization of LLM models: https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision (same article as in 1.)\n\nIn particular, this section makes it clear that quantization helps reduce the required GPU memory for running LLMs, at the cost of a slower inference speed, because quantized values need to be converted back and forth to fp16 / bf16.\n\n\nIn the same article HuggingFace article is a link to the Illustrated GPT2 post (Aug 2019).\n\nThis is a really good and detailed post - probably by far the most detailed explanation of how decoding works in Transformer architecture that I’ve read.\nIt also helped me better grasp some more details of Transformer. It also explains why for generation-related tasks (including translation, summarization, etc.), the decoder part is sufficient (and using a full encoder-decoder is probably unnecessary).\nI think this post + the original Transformer paper (2017) make for a complete intro to the transformer architecture.\nThe part explaining decoding, combined with the HF link in 1. help make the KV cache clear.\n\nAll in all, a great post from HF as an entry point to understand KV Cache and Quantization."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Peter Hoang Tech Blog",
     "section": "",
-    "text": "No matching items"
+    "text": "A good intro to Key-Value Cache and Quantization\n\n\n\n\n\n\n\nllms\n\n\ntransformer\n\n\n\n\nIntroduction to KV Cache and Quantization of LLMs\n\n\n\n\n\n\nJan 4, 2024\n\n\nPeter Hoang\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Quick intro\nI’m Peter Hoang, an ML/AI Engineer with extensive software experience and product building experience. I’ve been a professional software engineer since 2009.\nMy current AI stack is Python-based (Pytorch, Huggingface, …). Other techs that I’m currently productive with include: Django, Javascript, Html/Css, Postgres, and a little of React Native.\n\n\nCV\n In 2023, I went back to school and currently doing a Msc in CS at Western University, Canada (2023 - 2024).\nI feel fortunate to witness and experience the biggest breakthroughs in AI in a long time. In 2024, my main focus is to continue learning and expanding my knowledge of AI.\nFor details on my previous work, please check out my CV on Linkedin.\n\n\nConnect\nPlease connect with me on Linkedin.\nI have a main blog at peterhung.org where I write, mostly about education, business and life lessons, in both Vietnamese and English. (For a list of articles written in English, please use this link.)"
   }
 ]

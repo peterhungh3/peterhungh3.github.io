@@ -10,6 +10,40 @@
 <atom:link href="https://peterhungh3.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 26 Dec 2023 20:53:02 GMT</lastBuildDate>
+<lastBuildDate>Thu, 04 Jan 2024 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>A good intro to Key-Value Cache and Quantization</title>
+  <dc:creator>Peter Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/llm-kv-cache-quantization/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I stumbled upon these blog posts while trying to read up on Key-Value cache in LLMs. I think they’re short, well-explained and provide a good high-level overivew so I recommend them here.</p>
+<ol type="1">
+<li><p>Good entry for understanding Key-value cache in Transformers: <a href="https://huggingface.co/blog/optimize-llm#32-the-key-value-cache" target="_blank">https://huggingface.co/blog/optimize-llm#32-the-key-value-cache</a> (Sept 2023)</p></li>
+<li><p>Good entry for understanding quantization of LLM models: <a href="https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision" target="_blank">https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision</a> (same article as in 1.)</p>
+<ul>
+<li>In particular, this section makes it clear that quantization helps reduce the required GPU memory for running LLMs, at the cost of a slower inference speed, because quantized values need to be converted back and forth to fp16 / bf16.</li>
+</ul></li>
+</ol>
+<p>In the same article HuggingFace article is a link to the <a href="https://jalammar.github.io/illustrated-gpt2/" target="_blank">Illustrated GPT2 post</a> (Aug 2019).</p>
+<ul>
+<li>This is a really good and detailed post - probably by far the most detailed explanation of how decoding works in Transformer architecture that I’ve read.</li>
+<li>It also helped me better grasp some more details of Transformer. It also explains why for generation-related tasks (including translation, summarization, etc.), the decoder part is sufficient (and using a full encoder-decoder is probably unnecessary).</li>
+<li>I think this post + the original <a href="https://arxiv.org/abs/1706.03762" target="_blank">Transformer paper</a> (2017) make for a complete intro to the transformer architecture.</li>
+<li>The part explaining decoding, combined with the HF link in 1. help make the KV cache clear.</li>
+</ul>
+<p>All in all, a great post from HF as an entry point to understand KV Cache and Quantization.</p>
+
+
+
+ ]]></description>
+  <category>llms</category>
+  <category>transformer</category>
+  <guid>https://peterhungh3.github.io/posts/llm-kv-cache-quantization/index.html</guid>
+  <pubDate>Thu, 04 Jan 2024 05:00:00 GMT</pubDate>
+</item>
 </channel>
 </rss>

@@ -9,37 +9,27 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/hunghuuhoang
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/hunghuuhoang
 
 ---
 ### Quick intro
-I'm Peter Hoang, an ML/AI Engineer with a product mindset. I've been writing software from 2009.
+I'm Peter Hoang, an ML/AI Engineer with extensive software experience and product building 
+experience. I've been a professional software engineer since 2009. 
 
-My current AI stack is Python-based (Pytorch, Huggingface, ...). Other software techs that I'm currently productive with include: Django, Javascript, Html/Css, Postgres, and a little of React Native. 
-
-In 2024, my main focus is continue learning and expanding my knowledge of AI and software in general. And during that process, learning to be more active on Github.
+My current AI stack is Python-based (Pytorch, Huggingface, ...). Other techs that I'm currently productive with include: Django, Javascript, Html/Css, Postgres, and a little of React Native. 
 
 
-### Short CV
+### CV
 <a id="short-cv"></a>
-Below is a brief version of my CV. For my full CV with more details, please check out my <a href="https://www.linkedin.com/in/hunghuuhoang/" target="_blank">Linkedin profile</a>. 
+In 2023, I went back to school and currently doing a Msc in CS at <a href="https://www.csd.uwo.ca" target="_blank">Western University</a>, Canada (2023 - 2024).
 
-- 2023 - 2024: I started my Msc in CS at <a href="https://www.csd.uwo.ca" target="_blank">Western University</a>, Canada. This marked my full-time study & work on AI. (I feel fortunate that this comeback was coincidental with a big wave in Deep learning.)
+I feel fortunate to witness and experience the biggest breakthroughs in AI in a long time. In 2024, my main focus is to continue learning and expanding my knowledge of AI.
 
-- 2021 & 2022: I started reviewing key concepts & background Math in AI on a part-time basis. During this time, I did 2 finetuning projects that were quite interesting (See the Projects Section on my Linkedin). Reviewing/learning these fundamental knowledge has been instrumental in helping me get up to speed onAI/Deep learning.
+For details on my previous work, please check out my <a href="https://www.linkedin.com/in/hunghuuhoang/" target="_blank">CV on Linkedin</a>. 
 
-- 2013 - 2023: I worked on 2 small startup projects, both about SaaS for learning English, targetting the Vietnamese market (initially, but they never managed to expand out of Vietnam). 
-The apps didn't take off, but the consolation price for me was that the apps, in combination, still attracted more than 1.5 million free users and benefited many who used them. And, I learned (and sometimes forced to learn :) a lot about various fields. 
-
-- 2009 - 2013: I worked as an NLP & software engineer in Singapore. 
-
-- 2005 - 2009: I did my Bachelor in Computing at <a href="https://www.comp.nus.edu.sg/" target="_blank">NUS</a>, Singapore. And with a minor in Math.  
 
 ### Connect
 
-Please connect with me on <a href="https://twitter.com/hunghuuhoang" target="_blank">Twitter</a> (for sharings on diverse topics) and <a href="https://www.linkedin.com/in/hunghuuhoang/" target="_blank">Linkedin</a> (for sharings on tech-focused topics). 
+Please connect with me on <a href="https://www.linkedin.com/in/hunghuuhoang/" target="_blank">Linkedin</a>.
 
-My main blog is at <a href="https://peterhung.org/?r=ph-gh" target="_blank">peterhung.org</a> where I write, mostly about education, business and life lessons, in both Vietnamese and English. (For a list of articles written in English, please use <a href="https://peterhung.org/tag/english-articles/" target="_blank">this link</a>.) 
+I have a main blog at <a href="https://peterhung.org/?r=ph-gh" target="_blank">peterhung.org</a> where I write, mostly about education, business and life lessons, in both Vietnamese and English. (For a list of articles written in English, please use <a href="https://peterhung.org/tag/english-articles/" target="_blank">this link</a>.) 
 

@@ -73,9 +73,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -156,7 +156,7 @@ cookieconsent.run({
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/hunghuuhoang" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://peterhung.org" rel="" target=""><i class="bi bi-website" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -173,7 +173,7 @@ cookieconsent.run({
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="llms">llms <span class="quarto-category-count">(1)</span></div><div class="category" data-category="transformer">transformer <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -185,7 +185,44 @@ cookieconsent.run({
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="llms,transformer" data-listing-date-sort="1704344400000" data-listing-file-modified-sort="1704334361542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./posts/llm-kv-cache-quantization/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+</div>
+<div class="body">
+<a href="./posts/llm-kv-cache-quantization/index.html">
+<h3 class="no-anchor listing-title">
+A good intro to Key-Value Cache and Quantization
+</h3>
+<div class="listing-subtitle">
 
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('llms'); return false;">
+llms
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('transformer'); return false;">
+transformer
+</div>
+</div>
+<a href="./posts/llm-kv-cache-quantization/index.html">
+<div class="listing-description">
+<p>Introduction to KV Cache and Quantization of LLMs</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/llm-kv-cache-quantization/index.html">
+<div class="listing-date">
+Jan 4, 2024
+</div>
+<div class="listing-author">
+Peter Hoang
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items

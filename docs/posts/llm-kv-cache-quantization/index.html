@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Peter Hoang">
+<meta name="dcterms.date" content="2024-01-04">
+<meta name="description" content="Introduction to KV Cache and Quantization of LLMs">
 
-<title>Peter Hoang Tech Blog - About</title>
+<title>Peter Hoang Tech Blog - A good intro to Key-Value Cache and Quantization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -87,16 +91,14 @@ cookieconsent.run({
   
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Peter Hoang Tech Blog - About">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/41604567">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Peter Hoang Tech Blog - A good intro to Key-Value Cache and Quantization">
+<meta property="og:description" content="Introduction to KV Cache and Quantization of LLMs">
 <meta property="og:site-name" content="Peter Hoang Tech Blog">
-<meta name="twitter:title" content="Peter Hoang Tech Blog - About">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/41604567">
+<meta name="twitter:title" content="Peter Hoang Tech Blog - A good intro to Key-Value Cache and Quantization">
+<meta name="twitter:description" content="Introduction to KV Cache and Quantization of LLMs">
 <meta name="twitter:creator" content="@hunghuuhoang">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -106,7 +108,7 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Peter Hoang Tech Blog</span>
     </a>
   </div>
@@ -117,7 +119,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -138,52 +140,73 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">A good intro to Key-Value Cache and Quantization</h1>
+                  <div>
+        <div class="description">
+          Introduction to KV Cache and Quantization of LLMs
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">llms</div>
+                <div class="quarto-category">transformer</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Peter Hoang </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 4, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header> <div class="about-links">
-  <a href="https://www.linkedin.com/in/hunghuuhoang" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-<section id="quick-intro" class="level3">
-<h3 data-anchor-id="quick-intro">Quick intro</h3>
-<p>I’m Peter Hoang, an ML/AI Engineer with extensive software experience and product building experience. I’ve been a professional software engineer since 2009.</p>
-<p>My current AI stack is Python-based (Pytorch, Huggingface, …). Other techs that I’m currently productive with include: Django, Javascript, Html/Css, Postgres, and a little of React Native.</p>
-</section>
-<section id="cv" class="level3">
-<h3 data-anchor-id="cv">CV</h3>
-<p><a id="short-cv"></a> In 2023, I went back to school and currently doing a Msc in CS at <a href="https://www.csd.uwo.ca" target="_blank">Western University</a>, Canada (2023 - 2024).</p>
-<p>I feel fortunate to witness and experience the biggest breakthroughs in AI in a long time. In 2024, my main focus is to continue learning and expanding my knowledge of AI.</p>
-<p>For details on my previous work, please check out my <a href="https://www.linkedin.com/in/hunghuuhoang/" target="_blank">CV on Linkedin</a>.</p>
-</section>
-<section id="connect" class="level3">
-<h3 data-anchor-id="connect">Connect</h3>
-<p>Please connect with me on <a href="https://www.linkedin.com/in/hunghuuhoang/" target="_blank">Linkedin</a>.</p>
-<p>I have a main blog at <a href="https://peterhung.org/?r=ph-gh" target="_blank">peterhung.org</a> where I write, mostly about education, business and life lessons, in both Vietnamese and English. (For a list of articles written in English, please use <a href="https://peterhung.org/tag/english-articles/" target="_blank">this link</a>.)</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</section>
-</main></div>
-    </div>
-    <img src="https://avatars.githubusercontent.com/u/41604567" class="about-image
-  rounded " style="width: 12em;">
-  </div>
-</div>
- <!-- /main -->
+
+
+<p>I stumbled upon these blog posts while trying to read up on Key-Value cache in LLMs. I think they’re short, well-explained and provide a good high-level overivew so I recommend them here.</p>
+<ol type="1">
+<li><p>Good entry for understanding Key-value cache in Transformers: <a href="https://huggingface.co/blog/optimize-llm#32-the-key-value-cache" target="_blank">https://huggingface.co/blog/optimize-llm#32-the-key-value-cache</a> (Sept 2023)</p></li>
+<li><p>Good entry for understanding quantization of LLM models: <a href="https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision" target="_blank">https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision</a> (same article as in 1.)</p>
+<ul>
+<li>In particular, this section makes it clear that quantization helps reduce the required GPU memory for running LLMs, at the cost of a slower inference speed, because quantized values need to be converted back and forth to fp16 / bf16.</li>
+</ul></li>
+</ol>
+<p>In the same article HuggingFace article is a link to the <a href="https://jalammar.github.io/illustrated-gpt2/" target="_blank">Illustrated GPT2 post</a> (Aug 2019).</p>
+<ul>
+<li>This is a really good and detailed post - probably by far the most detailed explanation of how decoding works in Transformer architecture that I’ve read.</li>
+<li>It also helped me better grasp some more details of Transformer. It also explains why for generation-related tasks (including translation, summarization, etc.), the decoder part is sufficient (and using a full encoder-decoder is probably unnecessary).</li>
+<li>I think this post + the original <a href="https://arxiv.org/abs/1706.03762" target="_blank">Transformer paper</a> (2017) make for a complete intro to the transformer architecture.</li>
+<li>The part explaining decoding, combined with the HF link in 1. help make the KV cache clear.</li>
+</ul>
+<p>All in all, a great post from HF as an entry point to understand KV Cache and Quantization.</p>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -204,6 +227,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

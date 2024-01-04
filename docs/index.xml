@@ -28,12 +28,12 @@
 <li>In particular, this section makes it clear that quantization helps reduce the required GPU memory for running LLMs, at the cost of a slower inference speed, because quantized values need to be converted back and forth to fp16 / bf16.</li>
 </ul></li>
 </ol>
-<p>In the same article HuggingFace article is a link to the <a href="https://jalammar.github.io/illustrated-gpt2/" target="_blank">Illustrated GPT2 post</a> (Aug 2019).</p>
+<p>In the same HuggingFace article is a link to the <a href="https://jalammar.github.io/illustrated-gpt2/" target="_blank">Illustrated GPT2 post</a> (Aug 2019).</p>
 <ul>
 <li>This is a really good and detailed post - probably by far the most detailed explanation of how decoding works in Transformer architecture that I’ve read.</li>
 <li>It also helped me better grasp some more details of Transformer. It also explains why for generation-related tasks (including translation, summarization, etc.), the decoder part is sufficient (and using a full encoder-decoder is probably unnecessary).</li>
 <li>I think this post + the original <a href="https://arxiv.org/abs/1706.03762" target="_blank">Transformer paper</a> (2017) make for a complete intro to the transformer architecture.</li>
-<li>The part explaining decoding, combined with the HF link in 1. help make the KV cache clear.</li>
+<li>The part explaining decoding, combined with the HF link #1 above, help make the KV cache clear.</li>
 </ul>
 <p>All in all, a great post from HF as an entry point to understand KV Cache and Quantization.</p>
 

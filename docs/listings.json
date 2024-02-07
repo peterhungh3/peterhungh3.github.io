@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/finetuning-for-nli/index.html",
       "/posts/compare-llama2-gpt-on-gec-task/index.html",
       "/posts/llm-kv-cache-quantization/index.html"
     ]

@@ -10,7 +10,42 @@
 <atom:link href="https://peterhungh3.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Tue, 06 Feb 2024 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 07 Feb 2024 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Finetuning for Natural Language Inference</title>
+  <dc:creator>Peter Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/finetuning-for-nli/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This was another project I did for an AI course during my Msc study. In this project, I decided to work on finetuning pretrained language models for multilingual Natural Language Inference (NLI).</p>
+<p>The context and data for this project were based on <a href="https://www.kaggle.com/competitions/contradictory-my-dear-watson" target="_blank">this Kaggle competition</a>.</p>
+<p>You can read my project report <a href="Finetuning_for_NLI_Project_Report.pdf" target="_blank">in full here</a>. Below are a few interesting takeaways:</p>
+<ol type="1">
+<li><p>This project was the first time I worked with Flan-T5 and mDeberta-V3 models. I’d recently heard about them and thought this would be a good chance to try them out. In this project, mDeberta-V3 performed very well, and consistently so across all evaluated languages (there were 15 of them). Surprisingly, Flan-T5, which was multilingual by pretraining, performed ok, but not as well as mDeberta. This was something I still haven’t known exactly why.</p></li>
+<li><p>Another issue that’s still unknown was that somehow the finetuning didn’t work for XLM-Roberta, with which I had previously obtained decent finetuning results in the project about <a href="https://peterhung.org/tech/insert-vietnamese-accent-transformer-model/" target="_blank">auto inserting Vietnamese accent marks</a>.</p></li>
+<li><p>Apart from the above 2 points, everything went as expected. The best results were obtained using an ensemble of fintuned mDeberta-V3 and fintuned Flan-T5 Large. The picture below showed this result:</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://peterhungh3.github.io/posts/finetuning-for-nli/report_table9.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>If you’re interested in this topic, the full report is available <a href="Finetuning_for_NLI_Project_Report.pdf" target="_blank">here</a>.</p>
+
+
+
+ ]]></description>
+  <category>finetuning</category>
+  <category>mBERT</category>
+  <category>mDeberta-V3</category>
+  <category>Flan-T5</category>
+  <category>Kaggle</category>
+  <guid>https://peterhungh3.github.io/posts/finetuning-for-nli/index.html</guid>
+  <pubDate>Wed, 07 Feb 2024 05:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Llama-2 vs GPT models on GEC</title>
   <dc:creator>Peter Hoang</dc:creator>

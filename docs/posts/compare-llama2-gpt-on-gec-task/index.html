@@ -193,15 +193,15 @@ cookieconsent.run({
 <p>(Please note that these results were measured around the Oct-Dec 2023 period, and since then these models probably have been updated)</p>
 <p>You can read my project report in <a href="LLMS_GEC_Evaluation_Project_Report.pdf" target="_blank">this pdf</a>. But below is a few key takeaways:</p>
 <ol type="1">
-<li><p>Although we usually think of LLMs, esp.&nbsp;GPT3.5 onwards, as having mastered the art of writing, and therefore, can correct grammar / vocabulary mistakes with ease. There is no doubt about that, but to evaluate their accuracy using existing benchmarks turned out to be difficult. The main reason was that LLMs’ corrections are more unpredicatable, from the view of the test set, → a lot of false positives → adversely affect both precision and recall.</p></li>
-<li><p>I used the ERRANT toolkit and 400 sentences taken from the Dev set of the BEA 2019 Shared Task’s for evaluation. The results showed that they were “mediocre” GEC systems. This highlights the challenge of measuring accuracy of LLMs. Below is Table 6 from the report, indicating the highest F0.5 obtained.</p></li>
+<li><p>Although we usually think of LLMs, esp.&nbsp;GPT3.5 onwards, as having mastered the art of writing, and therefore, can correct grammar / vocabulary mistakes with ease. There is no doubt about that, but to evaluate their accuracy using existing benchmarks turned out to be difficult. The main reason was that LLMs’ corrections are more unpredicatable, at least from the view of the Test set. This created a lot of false positives → adversely affected both precision and recall.</p></li>
+<li><p>I used the ERRANT toolkit and 400 sentences taken from the Dev set of the BEA 2019 Shared Task for evaluation. The results showed that they were “mediocre” GEC systems. This highlights the challenge of measuring accuracy of LLMs. Below is Table 6 from the report, indicating the highest F0.5 obtained.</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="gec_report_table6.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<p>Another big takeaway from this project for me was a better appreciation of the challenge in benchmarking LLMs. Compared to previous generation of “in-the-box” models, LLMs are much more challenging to measure.</p>
+<p>Another big takeaway from this project for me was a better appreciation of the challenge in benchmarking LLMs. Compared to previous generations of “in-the-box” models, LLMs are much more challenging to measure.</p>
 
 
 

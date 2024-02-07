@@ -15,14 +15,16 @@ website:
 
   cookie-consent: true
   google-analytics: "G-62ZMF18MSP"
-  twitter-card:
-    creator: "@hunghuuhoang"
   open-graph: true
+  favicon: data/images/android-chrome-192x192.png
 
 format:
   html:
     theme: cosmo
     css: styles.css
+
+resources:
+  - "data/*"
 
 
 

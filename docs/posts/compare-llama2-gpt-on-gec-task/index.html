@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Peter Hoang">
-<meta name="dcterms.date" content="2024-01-04">
-<meta name="description" content="Introduction to KV Cache and Quantization of LLMs">
+<meta name="dcterms.date" content="2024-02-06">
+<meta name="description" content="Evaluating Llama-2 and GPT models on the Grammatical Errors Correction Task">
 
-<title>Peter Hoang Tech Blog - A good intro to Key-Value Cache and Quantization</title>
+<title>Peter Hoang Tech Blog - Llama-2 vs GPT models on GEC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,9 +93,12 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Peter Hoang Tech Blog - A good intro to Key-Value Cache and Quantization">
-<meta property="og:description" content="Introduction to KV Cache and Quantization of LLMs">
+<meta property="og:title" content="Peter Hoang Tech Blog - Llama-2 vs GPT models on GEC">
+<meta property="og:description" content="Evaluating Llama-2 and GPT models on the Grammatical Errors Correction Task">
+<meta property="og:image" content="https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/gec_report_table6.png">
 <meta property="og:site-name" content="Peter Hoang Tech Blog">
+<meta property="og:image:height" content="296">
+<meta property="og:image:width" content="601">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -140,15 +143,17 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">A good intro to Key-Value Cache and Quantization</h1>
+      <h1 class="title">Llama-2 vs GPT models on GEC</h1>
                   <div>
         <div class="description">
-          Introduction to KV Cache and Quantization of LLMs
+          Evaluating Llama-2 and GPT models on the Grammatical Errors Correction Task
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">llms</div>
-                <div class="quarto-category">transformer</div>
+                <div class="quarto-category">llama2</div>
+                <div class="quarto-category">gpt</div>
+                <div class="quarto-category">gec</div>
               </div>
                   </div>
   </div>
@@ -166,7 +171,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 4, 2024</p>
+        <p class="date">February 6, 2024</p>
       </div>
     </div>
     
@@ -184,22 +189,19 @@ cookieconsent.run({
 
 
 
-<p>I stumbled upon these blog posts while trying to read up on Key-Value cache in LLMs. I think they’re short, well-explained and provide a good high-level overivew so I recommend them here.</p>
+<p>For an ML course during my Msc study, I did a rather interesting project on evaluating Llama-2 models (7B, 13B and 70B versions) and GPT models (GPT3.5, GPT4 and GPT4-Preview) on the Grammatical Errors Correction (GEC) Task.</p>
+<p>(Please note that these results were measured around the Oct-Dec 2023 period, and since then these models probably have been updated)</p>
+<p>You can read my project report in <a href="LLMS_GEC_Evaluation_Project_Report.pdf" target="_blank">this pdf</a>. But below is a few key takeaways:</p>
 <ol type="1">
-<li><p>Good entry for understanding Key-value cache in Transformers: <a href="https://huggingface.co/blog/optimize-llm#32-the-key-value-cache" target="_blank">https://huggingface.co/blog/optimize-llm#32-the-key-value-cache</a> (Sept 2023)</p></li>
-<li><p>Good entry for understanding quantization of LLM models: <a href="https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision" target="_blank">https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision</a> (same article as in 1.)</p>
-<ul>
-<li>In particular, this section makes it clear that quantization helps reduce the required GPU memory for running LLMs, at the cost of a slower inference speed, because quantized values need to be converted back and forth to fp16 / bf16.</li>
-</ul></li>
+<li><p>Although we usually think of LLMs, esp.&nbsp;GPT3.5 onwards, as having mastered the art of writing, and therefore, can correct grammar / vocabulary mistakes with ease. There is no doubt about that, but to evaluate their accuracy using existing benchmarks turned out to be difficult. The main reason was that LLMs’ corrections are more unpredicatable, from the view of the test set, → a lot of false positives → adversely affect both precision and recall.</p></li>
+<li><p>I used the ERRANT toolkit and 400 sentences taken from the Dev set of the BEA 2019 Shared Task’s for evaluation. The results showed that they were “mediocre” GEC systems. This highlights the challenge of measuring accuracy of LLMs. Below is Table 6 from the report, indicating the highest F0.5 obtained.</p></li>
 </ol>
-<p>In the same HuggingFace article is a link to the <a href="https://jalammar.github.io/illustrated-gpt2/" target="_blank">Illustrated GPT2 post</a> (Aug 2019).</p>
-<ul>
-<li>This is a really good and detailed post - probably by far the most detailed explanation of how decoding works in Transformer architecture that I’ve read.</li>
-<li>It also helped me better grasp some more details of Transformer. It also explains why for generation-related tasks (including translation, summarization, etc.), the decoder part is sufficient (and using a full encoder-decoder is probably unnecessary).</li>
-<li>I think this post + the original <a href="https://arxiv.org/abs/1706.03762" target="_blank">Transformer paper</a> (2017) make for a complete intro to the transformer architecture.</li>
-<li>The part explaining decoding, combined with the HF link #1 above, help make the KV cache clear.</li>
-</ul>
-<p>All in all, a great post from HF as an entry point to understand KV Cache and Quantization.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="gec_report_table6.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Another big takeaway from this project for me was a better appreciation of the challenge in benchmarking LLMs. Compared to previous generation of “in-the-box” models, LLMs are much more challenging to measure.</p>
 
 
 

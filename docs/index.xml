@@ -10,7 +10,40 @@
 <atom:link href="https://peterhungh3.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Thu, 04 Jan 2024 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 06 Feb 2024 05:00:00 GMT</lastBuildDate>
+<item>
+  <title>Llama-2 vs GPT models on GEC</title>
+  <dc:creator>Peter Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>For an ML course during my Msc study, I did a rather interesting project on evaluating Llama-2 models (7B, 13B and 70B versions) and GPT models (GPT3.5, GPT4 and GPT4-Preview) on the Grammatical Errors Correction (GEC) Task.</p>
+<p>(Please note that these results were measured around the Oct-Dec 2023 period, and since then these models probably have been updated)</p>
+<p>You can read my project report in <a href="LLMS_GEC_Evaluation_Project_Report.pdf" target="_blank">this pdf</a>. But below is a few key takeaways:</p>
+<ol type="1">
+<li><p>Although we usually think of LLMs, esp.&nbsp;GPT3.5 onwards, as having mastered the art of writing, and therefore, can correct grammar / vocabulary mistakes with ease. There is no doubt about that, but to evaluate their accuracy using existing benchmarks turned out to be difficult. The main reason was that LLMs’ corrections are more unpredicatable, from the view of the test set, → a lot of false positives → adversely affect both precision and recall.</p></li>
+<li><p>I used the ERRANT toolkit and 400 sentences taken from the Dev set of the BEA 2019 Shared Task’s for evaluation. The results showed that they were “mediocre” GEC systems. This highlights the challenge of measuring accuracy of LLMs. Below is Table 6 from the report, indicating the highest F0.5 obtained.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/gec_report_table6.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Another big takeaway from this project for me was a better appreciation of the challenge in benchmarking LLMs. Compared to previous generation of “in-the-box” models, LLMs are much more challenging to measure.</p>
+
+
+
+ ]]></description>
+  <category>llms</category>
+  <category>llama2</category>
+  <category>gpt</category>
+  <category>gec</category>
+  <guid>https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/index.html</guid>
+  <pubDate>Tue, 06 Feb 2024 05:00:00 GMT</pubDate>
+</item>
 <item>
   <title>A good intro to Key-Value Cache and Quantization</title>
   <dc:creator>Peter Hoang</dc:creator>

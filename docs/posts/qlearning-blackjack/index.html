@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Peter Hoang">
+<meta name="dcterms.date" content="2024-05-30">
+<meta name="description" content="Train an RL agent to play Blackjack using Tabular and Deep Q-learning">
 
-<title>Peter Hoang Tech Blog</title>
+<title>Peter Hoang Tech Blog - Optimizing Blackjack games with Tabular and Deep Q-learning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./data/images/android-chrome-192x192.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../data/images/android-chrome-192x192.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -64,35 +65,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-62ZMF18MSP"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -119,22 +91,24 @@ cookieconsent.run({
 </script> 
   
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Peter Hoang Tech Blog" href="index.xml"><meta property="og:title" content="">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Peter Hoang Tech Blog - Optimizing Blackjack games with Tabular and Deep Q-learning">
+<meta property="og:description" content="Train an RL agent to play Blackjack using Tabular and Deep Q-learning">
+<meta property="og:image" content="https://peterhungh3.github.io/posts/qlearning-blackjack/report_table4.png">
 <meta property="og:site-name" content="Peter Hoang Tech Blog">
+<meta property="og:image:height" content="520">
+<meta property="og:image:width" content="626">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Peter Hoang Tech Blog</span>
     </a>
   </div>
@@ -145,7 +119,7 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -166,201 +140,76 @@ cookieconsent.run({
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Optimizing Blackjack games with Tabular and Deep Q-learning</h1>
+                  <div>
+        <div class="description">
+          Train an RL agent to play Blackjack using Tabular and Deep Q-learning
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Blackjack</div>
+                <div class="quarto-category">Q-Learning</div>
+                <div class="quarto-category">Deep Q</div>
+                <div class="quarto-category">Reinforcement learning</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Peter Hoang </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 30, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Blackjack">Blackjack <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Deep Q">Deep Q <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Flan-T5">Flan-T5 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Kaggle">Kaggle <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q-Learning">Q-Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reinforcement learning">Reinforcement learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="finetuning">finetuning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gec">gec <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gpt">gpt <span class="quarto-category-count">(1)</span></div><div class="category" data-category="llama2">llama2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="llms">llms <span class="quarto-category-count">(2)</span></div><div class="category" data-category="mBERT">mBERT <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mDeberta-V3">mDeberta-V3 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="transformer">transformer <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<p>This was a project I did for a Reinforcement Learning course during my Msc study. In this project, I worked on training an RL agent to learn to play Blackjack, a popular game worldwide.</p>
+<p>Blackjack is a simple game that I understand well. In addition, its action space is small (only a few actions such as Hit, Stand, Double-down, Split) and its state space is also small, making it a good candidate for a learning project about Q-Learning (tabular and Deep-Q).</p>
+<p>You can read my <a href="QLearning_Blackjack.pdf" target="_blank">full report here</a>.</p>
+<p>Below are a few key notes:</p>
+<ol type="1">
+<li><p>In this project, I was able to extend the <a href="https://gymnasium.farama.org/environments/toy_text/blackjack/" target="_blank"> Blackjack toy environment</a> by Gymanisum to support also Double-down and Split actions.</p></li>
+<li><p>For Blackjack, the tabular Q-learning produced better policies across the board. I suspect that the Deep-Q version is probably an overkill for this game, and to produce good results further hyper-params adjustments would be needed.</p></li>
+<li><p>The best trained policies results are shown in the picture below (see Section 4.4 in the project report).</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="report_table4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>One of the most interesting part when doing this training is to see how the agent’s policy evolves overtime. And that evolution is visualized and shown in Appendix A of the report.</li>
+</ol>
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Blackjack,Q-Learning,Deep Q,Reinforcement learning" data-listing-date-sort="1717041600000" data-listing-file-modified-sort="1717096977754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/qlearning-blackjack/index.html"> <p class="card-img-top"><img src="posts/qlearning-blackjack/report_table4.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/qlearning-blackjack/index.html">
-<h3 class="no-anchor listing-title">
-Optimizing Blackjack games with Tabular and Deep Q-learning
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Blackjack'); return false;">
-Blackjack
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Q-Learning'); return false;">
-Q-Learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Q'); return false;">
-Deep Q
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Reinforcement learning'); return false;">
-Reinforcement learning
-</div>
-</div>
-<a href="./posts/qlearning-blackjack/index.html">
-<div class="listing-description">
-<p>Train an RL agent to play Blackjack using Tabular and Deep Q-learning</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/qlearning-blackjack/index.html">
-<div class="listing-date">
-May 30, 2024
-</div>
-<div class="listing-author">
-Peter Hoang
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="finetuning,mBERT,mDeberta-V3,Flan-T5,Kaggle" data-listing-date-sort="1707282000000" data-listing-file-modified-sort="1713015169741" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/finetuning-for-nli/index.html"> <p class="card-img-top"><img src="posts/finetuning-for-nli/report_table9.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/finetuning-for-nli/index.html">
-<h3 class="no-anchor listing-title">
-Finetuning for Natural Language Inference
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('finetuning'); return false;">
-finetuning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('mBERT'); return false;">
-mBERT
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('mDeberta-V3'); return false;">
-mDeberta-V3
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Flan-T5'); return false;">
-Flan-T5
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Kaggle'); return false;">
-Kaggle
-</div>
-</div>
-<a href="./posts/finetuning-for-nli/index.html">
-<div class="listing-description">
-<p>Finetuning pretrained language models for Natural Language Inference</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/finetuning-for-nli/index.html">
-<div class="listing-date">
-Feb 7, 2024
-</div>
-<div class="listing-author">
-Peter Hoang
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="llms,llama2,gpt,gec" data-listing-date-sort="1707195600000" data-listing-file-modified-sort="1717092912270" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/compare-llama2-gpt-on-gec-task/index.html"> <p class="card-img-top"><img src="posts/compare-llama2-gpt-on-gec-task/gec_report_table6.png"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/compare-llama2-gpt-on-gec-task/index.html">
-<h3 class="no-anchor listing-title">
-Llama-2 vs GPT models on GEC
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('llms'); return false;">
-llms
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('llama2'); return false;">
-llama2
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('gpt'); return false;">
-gpt
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('gec'); return false;">
-gec
-</div>
-</div>
-<a href="./posts/compare-llama2-gpt-on-gec-task/index.html">
-<div class="listing-description">
-<p>Evaluating Llama-2 and GPT models on the Grammatical Errors Correction Task</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/compare-llama2-gpt-on-gec-task/index.html">
-<div class="listing-date">
-Feb 6, 2024
-</div>
-<div class="listing-author">
-Peter Hoang
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="llms,transformer" data-listing-date-sort="1704344400000" data-listing-file-modified-sort="1704334527928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/llm-kv-cache-quantization/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="./posts/llm-kv-cache-quantization/index.html">
-<h3 class="no-anchor listing-title">
-A good intro to Key-Value Cache and Quantization
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('llms'); return false;">
-llms
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('transformer'); return false;">
-transformer
-</div>
-</div>
-<a href="./posts/llm-kv-cache-quantization/index.html">
-<div class="listing-description">
-<p>Introduction to KV Cache and Quantization of LLMs</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/llm-kv-cache-quantization/index.html">
-<div class="listing-date">
-Jan 4, 2024
-</div>
-<div class="listing-author">
-Peter Hoang
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

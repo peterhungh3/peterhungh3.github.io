@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://peterhungh3.github.io/posts/finetuning-for-nli/index.html</loc>
-    <lastmod>2024-05-30T19:23:46.775Z</lastmod>
-  </url>
-  <url>
-    <loc>https://peterhungh3.github.io/posts/llm-kv-cache-quantization/index.html</loc>
-    <lastmod>2024-05-30T19:23:45.847Z</lastmod>
-  </url>
-  <url>
-    <loc>https://peterhungh3.github.io/about.html</loc>
-    <lastmod>2024-05-30T19:23:44.883Z</lastmod>
-  </url>
-  <url>
-    <loc>https://peterhungh3.github.io/index.html</loc>
-    <lastmod>2024-05-30T19:23:44.399Z</lastmod>
-  </url>
-  <url>
-    <loc>https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/index.html</loc>
-    <lastmod>2024-05-30T19:23:45.339Z</lastmod>
+    <loc>https://peterhungh3.github.io/posts/thoughts-prediction-scikitlearn/index.html</loc>
+    <lastmod>2024-05-30T22:24:00.387Z</lastmod>
   </url>
   <url>
     <loc>https://peterhungh3.github.io/posts/qlearning-blackjack/index.html</loc>
-    <lastmod>2024-05-30T19:23:46.319Z</lastmod>
+    <lastmod>2024-05-30T22:23:59.347Z</lastmod>
+  </url>
+  <url>
+    <loc>https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/index.html</loc>
+    <lastmod>2024-05-30T22:23:58.359Z</lastmod>
+  </url>
+  <url>
+    <loc>https://peterhungh3.github.io/index.html</loc>
+    <lastmod>2024-05-30T22:23:57.383Z</lastmod>
+  </url>
+  <url>
+    <loc>https://peterhungh3.github.io/about.html</loc>
+    <lastmod>2024-05-30T22:23:57.871Z</lastmod>
+  </url>
+  <url>
+    <loc>https://peterhungh3.github.io/posts/llm-kv-cache-quantization/index.html</loc>
+    <lastmod>2024-05-30T22:23:58.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://peterhungh3.github.io/posts/finetuning-for-nli/index.html</loc>
+    <lastmod>2024-05-30T22:23:59.919Z</lastmod>
   </url>
 </urlset>

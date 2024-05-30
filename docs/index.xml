@@ -49,6 +49,37 @@
   <pubDate>Thu, 30 May 2024 04:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>A simple game to predict people’s “random” selections</title>
+  <dc:creator>Peter Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/thoughts-prediction-scikitlearn/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This was a AI project I did for my Msc study. In this project, the central hypothesis was quite interesting: people’s thoughts may well be predictable, even when they try to “think randomly”.</p>
+<p>This idea was concretized into a simple game of trying to predict users’ choice of 0 or 1, based on their previous selections. Users are advised before the game to try to think in an unpredictable way.</p>
+<p>The game offers 2 modes. In the first mode, the program’s predictions at each time step are not immediately shown to the user and the user will know the final prediction accuracy of the program only at the end, after making 50 selections.</p>
+<p>In the second competitive mode, program’s predictions are immediately shown to the user and they can make use of this additional information in deciding what to choose next so as to “beat” the program.</p>
+<p>The program was built using a combination ML algorithms such as Decision Tree and SVM, all used from the <a href="https://scikit-learn.org/" target="_blank">Scikit-learn library</a>.</p>
+<p>Below is a video recording how this game works for the 2nd mode (competitive).</p>
+<p><video src="random_predict_competitive.mp4" class="img-fluid" controls=""><a href="random_predict_competitive.mp4">Video</a></video></p>
+<p>The initial plan was that the system would be able to predict users’ selections with a fairly high accuracy (such as 60%) but the current version hasn’t reached that yet. So in that sense, this is still an open project waiting for new algorithm ideas.</p>
+
+
+
+ ]]></description>
+  <category>random</category>
+  <category>thoughts</category>
+  <category>predictions</category>
+  <category>scikitlearn</category>
+  <category>Decision tree</category>
+  <category>MLP</category>
+  <category>SVM</category>
+  <guid>https://peterhungh3.github.io/posts/thoughts-prediction-scikitlearn/index.html</guid>
+  <pubDate>Thu, 30 May 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Finetuning for Natural Language Inference</title>
   <dc:creator>Peter Hoang</dc:creator>
   <link>https://peterhungh3.github.io/posts/finetuning-for-nli/index.html</link>

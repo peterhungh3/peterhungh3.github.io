@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/vietnamese-accent-finetuned-roberta/index.html",
       "/posts/thoughts-prediction-scikitlearn/index.html",
       "/posts/qlearning-blackjack/index.html",
       "/posts/finetuning-for-nli/index.html",

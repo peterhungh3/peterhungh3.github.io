@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/deploying-small-ml-model-aws-ecs/index.html",
       "/posts/vietnamese-accent-finetuned-roberta/index.html",
       "/posts/thoughts-prediction-scikitlearn/index.html",
       "/posts/qlearning-blackjack/index.html",

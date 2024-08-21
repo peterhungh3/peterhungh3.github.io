@@ -10,7 +10,68 @@
 <atom:link href="https://peterhungh3.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Wed, 03 Jul 2024 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 21 Aug 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Deploying a small ML model on AWS ECS (Part 1)</title>
+  <dc:creator>Peter Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/deploying-small-ml-model-aws-ecs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>In <a href="../../posts/vietnamese-accent-finetuned-roberta/">a previous post</a>, I’ve discussed a small ML model finetuned to auto insert vietnamese accent marks that I’ve shared on <a href="https://huggingface.co/peterhung/vietnamese-accent-marker-xlm-roberta" target="_blank">HuggingFace model hub</a>.</p>
+<p>In this post, I’d share my notes and observations from deploying this model on AWS ECS (Elastic Container Service).</p>
+<h3 class="anchored">
+Context
+</h3>
+<p>Some traditional VPS hosting services also support Docker. But to have “auto-scaling”, we’d need to use a big cloud such as AWS / GCP / Azure.</p>
+<p>In this post, we’d zoom into AWS ECS which is the service that is used to deploy containerized applications.</p>
+<h3 class="anchored">
+Key steps (end to end)
+</h3>
+<p>Below are the key steps to deploying an ML Model that was available locally (or on HF Hub) to AWS ECS:</p>
+<ol type="1">
+<li><p>Putting the ML Model behind an API. For this in Python, we can use Django Rest Framework (DRF), Flask or FastAPI. In this experiment, I used <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a> because this ML model doesn’t need any database.</p></li>
+<li><p>Once the server works locally, we can “containerize” it using Docker. A quick instructions can be found <a href="https://fastapi.tiangolo.com/deployment/docker/#dockerfile" target="_blank">here</a> for FastAPI.</p></li>
+<li><p>To use AWS ECS, we’d host our Docker image in AWS ECR (not a strict requirement, but the ECR fee is low and part of AWS so it may be convenient to do so.) <br>At the AWS Console -&gt; ECR: I created a new ECR private repo and follow the few steps (commands) shown auto by AWS. <br> I had no problem pushing to ECR just by copy and paste these commands. (Of course, we’d need to first install AWS CLI and the likes, but they’re all mentioned in the instructions).</p></li>
+<li><p>Follow the official instructions <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started.html" target="_blank">here</a> to setup and start our container instances. by AWS ECS. <br>This is the main discussion of this post so we’d focus on that in the next sections.</p></li>
+</ol>
+<h3 class="anchored">
+Overview of ECS concepts
+</h3>
+<p>In terms of concepts, it seems to me that ECS has 3 main concepts:</p>
+<ol type="1">
+<li>Cluster: like a placeholder for all our stuffs, probably just for grouping things</li>
+<li>Service: this is what actually gets deployed. Basically to configure the desired infrastructure and declare which “Tasks” to run, which is another concept below.</li>
+<li>Task: a task is collection of (related) containers that run together and deployed together. In practice, we’d need to declare our Tasks first, and then go create services based on them. In our Tasks definition, we’d explicitly declare which containers we want to use (those we’ve pushed to ECR above).</li>
+</ol>
+<p>So the sequence looks like this: Create cluster -&gt; Create Task defintion -&gt; Create service &amp; run it.</p>
+<p>The first 2 steps shouldn’t cause any problems, except to take note of the port mapping in Docker:</p>
+<ul>
+<li><p>Apparenly, as the time I did it, the Console UI didn’t allow to specify the port mapping (host port -&gt; container port), and only had a field for container port, which apparently gets mapped to the same host port.</p></li>
+<li><p>So for the host to be available at port 80, I’d need to set the API server to run at port 80 inside Docker as well (the Console had an option to specify the CMD command, and we can override it there).</p></li>
+</ul>
+<h3 class="anchored">
+The most interesting learning points are with the ECS Service
+</h3>
+<p>When creating the ECS Service, we can choose the underlying infra to be EC2 or Fargate, which can be thought of as a serverless version of EC2 for containers.</p>
+<p>But the note here is that as long as the service is running, which is always if it’s an API server, we’d get charged by the running time, not just when the service is actually used by some user. So in this sense, Fargate is a serverless abstraction over EC2 so we don’t have to concern ourselves with manaing the underling EC2 instances. So I chose Fargate for all of my experiments.</p>
+<p>When choosing Fargate, there’s a small option, enabled by default, to assign a public IP to our running tasks.</p>
+<p>When I kept this option enabled, everything went smoothly and I had something running right a way.</p>
+<p>But unexpected “challenges” happened when this option was not enabled. But I’d leave that to Part 2 of this post. Stay tuned.</p>
+
+
+
+ ]]></description>
+  <category>deploy ml model</category>
+  <category>aws ecs</category>
+  <category>aws</category>
+  <category>fastapi</category>
+  <category>finetuned vietnamese accent model</category>
+  <guid>https://peterhungh3.github.io/posts/deploying-small-ml-model-aws-ecs/index.html</guid>
+  <pubDate>Wed, 21 Aug 2024 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>A Transformer model to auto insert Vietnamese accent marks</title>
   <dc:creator>Peter Hoang</dc:creator>

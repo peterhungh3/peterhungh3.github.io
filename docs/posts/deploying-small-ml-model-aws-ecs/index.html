@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2024-08-21">
 <meta name="description" content="A few notes, lessons and observations from deploying a small ML model on AWS ECS">
 
-<title>Peter Hoang Tech Blog - Deploying a small ML model on AWS ECS (Part 1)</title>
+<title>Peter Hoang Tech Blog - Deploying a small ML model on AWS ECS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Peter Hoang Tech Blog - Deploying a small ML model on AWS ECS (Part 1)">
+<meta property="og:title" content="Peter Hoang Tech Blog - Deploying a small ML model on AWS ECS">
 <meta property="og:description" content="A few notes, lessons and observations from deploying a small ML model on AWS ECS">
 <meta property="og:site-name" content="Peter Hoang Tech Blog">
 </head>
@@ -120,12 +120,7 @@ cookieconsent.run({
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/hunghuuhoang/" rel="" target=""><i class="bi bi-linkedin" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://peterhung.org" rel="" target=""><i class="bi bi-website" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/peterhunghoang/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -140,7 +135,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Deploying a small ML model on AWS ECS (Part 1)</h1>
+      <h1 class="title">Deploying a small ML model on AWS ECS</h1>
                   <div>
         <div class="description">
           A few notes, lessons and observations from deploying a small ML model on AWS ECS
@@ -226,7 +221,6 @@ The most interesting learning points are with the ECS Service
 <p>But the note here is that as long as the service is running, which is always if it’s an API server, we’d get charged by the running time, not just when the service is actually used by some user. So in this sense, Fargate is a serverless abstraction over EC2 so we don’t have to concern ourselves with manaing the underling EC2 instances. So I chose Fargate for all of my experiments.</p>
 <p>When choosing Fargate, there’s a small option, enabled by default, to assign a public IP to our running tasks.</p>
 <p>When I kept this option enabled, everything went smoothly and I had something running right a way.</p>
-<p>But unexpected “challenges” happened when this option was not enabled. But I’d leave that to Part 2 of this post. Stay tuned.</p>
 
 
 

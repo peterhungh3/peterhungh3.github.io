@@ -9,9 +9,7 @@ website:
     right:
       - about.qmd
       - icon: linkedin
-        href: https://www.linkedin.com/in/hunghuuhoang/
-      - icon: website
-        href: https://peterhung.org 
+        href: https://www.linkedin.com/in/peterhunghoang/
 
   cookie-consent: true
   google-analytics: "G-62ZMF18MSP"

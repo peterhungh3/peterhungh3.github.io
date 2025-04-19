@@ -8,7 +8,10 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/hunghuuhoang
+      href: https://www.linkedin.com/in/peterhunghoang
+    - icon: newspaper # Replaced 'substack' with 'newspaper' as 'substack' is not a standard icon
+      text: Substack
+      href: https://substack.com/@peterhoang
 
 ---
 ### Quick intro
@@ -17,13 +20,12 @@ experience. I've been writing software since 2009.
 
 My current AI stack is Python-based (Pytorch, Huggingface, ...). Other techs that I'm currently productive with include: Django, Javascript, Html/Css, PostgreSQL, and a little of React Native.
 
-In terms of software engineering, in the coming periods I'd love to learn how software works
-at a lower level, probably via learning and using a lower-level programming language more frequently; and to learn more about distributed computing through a big cloud such as AWS.
+In addition to my CS background, I'm currently focused on learning and building AI-enabled products, which are absolutely fascinating given the dramatic progress of LLMs that we've been witnessing in the past few years.
 
 ### CV
 <a id="short-cv"></a>
 In 2023, I went back to school and currently doing a Msc in CS at <a href="https://www.csd.uwo.ca" target="_blank">Western University</a>, Canada (2023 - 2024). I feel fortunate to witness and experience the biggest breakthroughs in AI in a long time.
 
 ### Connect
-
-To connect or follow me, this is <a href="https://www.linkedin.com/in/hunghuuhoang/" target="_blank">my Linkedin</a>.
+Say hi and connect on <a href="https://www.linkedin.com/in/peterhunghoang/" target="_blank">Linkedin</a>,
+and <a href="https://substack.com/@peterhoang" target="_blank">Substack</a>.

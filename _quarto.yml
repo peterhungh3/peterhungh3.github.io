@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  site-url: "https://peterhungh3.github.io"
+  title: "Hung Hoang AI Blog"
+  navbar:
+    right:
+      - icon: search
+
+  cookie-consent: true
+  google-analytics: "G-62ZMF18MSP"
+  open-graph: true
+  favicon: data/images/android-chrome-192x192.png
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+resources:
+  - "data/*"
+
+
+

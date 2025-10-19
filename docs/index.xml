@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Hung Hoang AI Blog</title>
+<link>https://peterhungh3.github.io/index.html</link>
+<atom:link href="https://peterhungh3.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Tue, 03 Sep 2024 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>A Transformer model to auto insert Vietnamese accent marks</title>
+  <dc:creator>Hung Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/vietnamese-accent-finetuned-roberta/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This project was completed quite some time ago but the model wasn’t published yet. And now I’m glad this model is now available on HuggingFace hub <a href="https://huggingface.co/peterhung/vietnamese-accent-marker-xlm-roberta" target="_blank">here</a>.</p>
+<p>This model was finetuned based on XLM-Roberta (multilingual Roberta), a Transformer encoder, for the task of inserting Vietnamese accent marks.</p>
+<p>This accent marks insertion was modelled as a token classification where the assigned label corresponds to the necessary transformation to insert accents.</p>
+<p>The HF model page linked to above also contains detailed instructions on how to use the model from input to output.</p>
+
+
+
+ ]]></description>
+  <category>vietnamese accent marks</category>
+  <category>finetuned xlm-roberta</category>
+  <guid>https://peterhungh3.github.io/posts/vietnamese-accent-finetuned-roberta/index.html</guid>
+  <pubDate>Tue, 03 Sep 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>A simple game to predict people’s “random” selections</title>
+  <dc:creator>Hung Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/thoughts-prediction-scikitlearn/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This was a AI project I did for my Msc study. In this project, the central hypothesis was quite interesting: people’s thoughts may well be predictable, even when they try to “think randomly”. (This hypothesis is related to the interesting topic of human <a href="https://en.wikipedia.org/wiki/Free_will" target="_blank">free will</a>.)</p>
+<p>This idea was concretized into a simple game of trying to predict users’ choice of 0 or 1, based on their previous selections. Users are advised before the game to try to think in an unpredictable way.</p>
+<p>The game offers 2 modes. In the first mode, the program’s predictions at each time step are not immediately shown to the user and the user will know the final prediction accuracy of the program only at the end, after making 50 selections.</p>
+<p>In the second competitive mode, program’s predictions are immediately shown to the user and they can make use of this additional information in deciding what to choose next so as to “beat” the program.</p>
+<p>The program was built using a combination ML algorithms such as Decision Tree and SVM, all used from the <a href="https://scikit-learn.org/" target="_blank">Scikit-learn library</a>.</p>
+<p>Below is a video recording how this game works for the 2nd mode (competitive).</p>
+<p><video src="random_predict_competitive.mp4" class="img-fluid" controls=""><a href="random_predict_competitive.mp4">Video</a></video></p>
+<p>The initial plan was that the system would be able to predict users’ selections with a fairly high accuracy (such as 60%) but the current version hasn’t reached that yet. So in that sense, this is still an open project waiting for new algorithm ideas.</p>
+
+
+
+ ]]></description>
+  <category>random</category>
+  <category>thoughts</category>
+  <category>predictions</category>
+  <category>scikitlearn</category>
+  <category>Decision tree</category>
+  <category>MLP</category>
+  <category>SVM</category>
+  <guid>https://peterhungh3.github.io/posts/thoughts-prediction-scikitlearn/index.html</guid>
+  <pubDate>Sun, 02 Jun 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Optimizing Blackjack games with Tabular and Deep Q-learning</title>
+  <dc:creator>Hung Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/qlearning-blackjack/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This was a project I did for a Reinforcement Learning course during my Msc study. In this project, I worked on training an RL agent to learn to play Blackjack, a popular game worldwide.</p>
+<p>Blackjack is a simple game that I understand well. In addition, its action space is small (only a few actions such as Hit, Stand, Double-down, Split) and its state space is also small, making it a good candidate for a learning project about Q-Learning (tabular and Deep-Q).</p>
+<p>You can read my <a href="QLearning_Blackjack.pdf" target="_blank">full report here</a>.</p>
+<p>Below are a few key notes:</p>
+<ol type="1">
+<li><p>In this project, I was able to extend the <a href="https://gymnasium.farama.org/environments/toy_text/blackjack/" target="_blank"> Blackjack toy environment</a> by Gymanisum to support also Double-down and Split actions.</p></li>
+<li><p>For Blackjack, the tabular Q-learning produced better policies across the board. I suspect that the Deep-Q version is probably an overkill for this game, and to produce good results further hyper-params adjustments would be needed.</p></li>
+<li><p>The best trained policies results are shown in the picture below (see Section 4.4 in the project report).</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://peterhungh3.github.io/posts/qlearning-blackjack/report_table4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>One of the most interesting part when doing this training is to see how the agent’s policy evolves overtime. And that evolution is visualized and shown in Appendix A of the report.</li>
+</ol>
+
+
+
+ ]]></description>
+  <category>Blackjack</category>
+  <category>Q-Learning</category>
+  <category>Deep Q</category>
+  <category>Reinforcement learning</category>
+  <guid>https://peterhungh3.github.io/posts/qlearning-blackjack/index.html</guid>
+  <pubDate>Thu, 30 May 2024 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Finetuning for Natural Language Inference</title>
+  <dc:creator>Hung Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/finetuning-for-nli/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This was another project I did for an AI course during my Msc study. In this project, I decided to work on finetuning pretrained language models for multilingual Natural Language Inference (NLI).</p>
+<p>The context and data for this project were based on <a href="https://www.kaggle.com/competitions/contradictory-my-dear-watson" target="_blank">this Kaggle competition</a>.</p>
+<p>You can read my project report <a href="Finetuning_for_NLI_Project_Report.pdf" target="_blank">in full here</a>. Below are a few interesting takeaways:</p>
+<ol type="1">
+<li><p>This project was the first time I worked with Flan-T5 and mDeberta-V3 models. I’d recently heard about them and thought this would be a good chance to try them out. In this project, mDeberta-V3 performed very well, and consistently so across all evaluated languages (there were 15 of them). Surprisingly, Flan-T5, which was multilingual by pretraining, performed ok, but not as well as mDeberta. This was something I still haven’t known exactly why.</p></li>
+<li><p>Another issue that’s still unknown was that somehow the finetuning didn’t work for XLM-Roberta, with which I had previously obtained decent finetuning results in some previous projects.</p></li>
+<li><p>Apart from the above 2 points, everything went as expected. The best results were obtained using an ensemble of fintuned mDeberta-V3 and fintuned Flan-T5 Large. The picture below showed this result:</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://peterhungh3.github.io/posts/finetuning-for-nli/report_table9.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>If you’re interested in this topic, the full report is available <a href="Finetuning_for_NLI_Project_Report.pdf" target="_blank">here</a>.</p>
+
+
+
+ ]]></description>
+  <category>finetuning</category>
+  <category>mBERT</category>
+  <category>mDeberta-V3</category>
+  <category>Flan-T5</category>
+  <category>Kaggle</category>
+  <guid>https://peterhungh3.github.io/posts/finetuning-for-nli/index.html</guid>
+  <pubDate>Wed, 07 Feb 2024 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Llama-2 vs GPT models on GEC</title>
+  <dc:creator>Hung Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>For an ML course during my Msc study, I did a rather interesting project on evaluating Llama-2 models (7B, 13B and 70B versions) and GPT models (GPT3.5, GPT4 and GPT4-Preview) on the Grammatical Errors Correction (GEC) Task.</p>
+<p>You can read my project report in <a href="GEC_Project_Report.pdf" target="_blank">this pdf</a>. But below are a few key takeaways:</p>
+<ol type="1">
+<li><p>Although we usually think of LLMs, esp.&nbsp;GPT3.5 onwards, as having mastered the art of writing, and therefore, can correct grammar / vocabulary mistakes with ease. There is no doubt about that, but to evaluate their accuracy using existing benchmarks turned out to be difficult. The main reason was that LLMs’ corrections are more unpredicatable, at least from the view of the Test set. This created a lot of false positives → adversely affected both precision and recall.</p></li>
+<li><p>I used the ERRANT toolkit and 400 sentences taken from the Dev set of the BEA 2019 Shared Task for evaluation. The results showed that they were “mediocre” GEC systems. This highlights the challenge of measuring accuracy of LLMs. Below is Table 6 from the report, indicating the highest F0.5 obtained.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/gec_report_table6.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Another big takeaway from this project for me was a better appreciation of the challenge in benchmarking LLMs. Compared to previous generations of “in-the-box” models, LLMs are much more challenging to measure.</p>
+
+
+
+ ]]></description>
+  <category>llms</category>
+  <category>llama2</category>
+  <category>gpt</category>
+  <category>gec</category>
+  <guid>https://peterhungh3.github.io/posts/compare-llama2-gpt-on-gec-task/index.html</guid>
+  <pubDate>Tue, 06 Feb 2024 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>A good intro to Key-Value Cache and Quantization</title>
+  <dc:creator>Hung Hoang</dc:creator>
+  <link>https://peterhungh3.github.io/posts/llm-kv-cache-quantization/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I stumbled upon these blog posts while trying to read up on Key-Value cache in LLMs. I think they’re short, well-explained and provide a good high-level overivew so I recommend them here.</p>
+<ol type="1">
+<li><p>Good entry for understanding Key-value cache in Transformers: <a href="https://huggingface.co/blog/optimize-llm#32-the-key-value-cache" target="_blank">https://huggingface.co/blog/optimize-llm#32-the-key-value-cache</a> (Sept 2023)</p></li>
+<li><p>Good entry for understanding quantization of LLM models: <a href="https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision" target="_blank">https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision</a> (same article as in 1.)</p>
+<ul>
+<li>In particular, this section makes it clear that quantization helps reduce the required GPU memory for running LLMs, at the cost of a slower inference speed, because quantized values need to be converted back and forth to fp16 / bf16.</li>
+</ul></li>
+</ol>
+<p>In the same HuggingFace article is a link to the <a href="https://jalammar.github.io/illustrated-gpt2/" target="_blank">Illustrated GPT2 post</a> (Aug 2019).</p>
+<ul>
+<li>This is a really good and detailed post - probably by far the most detailed explanation of how decoding works in Transformer architecture that I’ve read.</li>
+<li>It also helped me better grasp some more details of Transformer. It also explains why for generation-related tasks (including translation, summarization, etc.), the decoder part is sufficient (and using a full encoder-decoder is probably unnecessary).</li>
+<li>I think this post + the original <a href="https://arxiv.org/abs/1706.03762" target="_blank">Transformer paper</a> (2017) make for a complete intro to the transformer architecture.</li>
+<li>The part explaining decoding, combined with the HF link #1 above, help make the KV cache clear.</li>
+</ul>
+<p>All in all, a great post from HF as an entry point to understand KV Cache and Quantization.</p>
+
+
+
+ ]]></description>
+  <category>llms</category>
+  <category>transformer</category>
+  <guid>https://peterhungh3.github.io/posts/llm-kv-cache-quantization/index.html</guid>
+  <pubDate>Thu, 04 Jan 2024 05:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

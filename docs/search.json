@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "posts/thoughts-prediction-scikitlearn/index.html",
+    "href": "posts/thoughts-prediction-scikitlearn/index.html",
+    "title": "A simple game to predict people’s “random” selections",
+    "section": "",
+    "text": "This was a AI project I did for my Msc study. In this project, the central hypothesis was quite interesting: people’s thoughts may well be predictable, even when they try to “think randomly”. (This hypothesis is related to the interesting topic of human free will.)\nThis idea was concretized into a simple game of trying to predict users’ choice of 0 or 1, based on their previous selections. Users are advised before the game to try to think in an unpredictable way.\nThe game offers 2 modes. In the first mode, the program’s predictions at each time step are not immediately shown to the user and the user will know the final prediction accuracy of the program only at the end, after making 50 selections.\nIn the second competitive mode, program’s predictions are immediately shown to the user and they can make use of this additional information in deciding what to choose next so as to “beat” the program.\nThe program was built using a combination ML algorithms such as Decision Tree and SVM, all used from the Scikit-learn library.\nBelow is a video recording how this game works for the 2nd mode (competitive).\nVideo\nThe initial plan was that the system would be able to predict users’ selections with a fairly high accuracy (such as 60%) but the current version hasn’t reached that yet. So in that sense, this is still an open project waiting for new algorithm ideas."
+  },
+  {
+    "objectID": "posts/qlearning-blackjack/index.html",
+    "href": "posts/qlearning-blackjack/index.html",
+    "title": "Optimizing Blackjack games with Tabular and Deep Q-learning",
+    "section": "",
+    "text": "This was a project I did for a Reinforcement Learning course during my Msc study. In this project, I worked on training an RL agent to learn to play Blackjack, a popular game worldwide.\nBlackjack is a simple game that I understand well. In addition, its action space is small (only a few actions such as Hit, Stand, Double-down, Split) and its state space is also small, making it a good candidate for a learning project about Q-Learning (tabular and Deep-Q).\nYou can read my full report here.\nBelow are a few key notes:\n\nIn this project, I was able to extend the  Blackjack toy environment by Gymanisum to support also Double-down and Split actions.\nFor Blackjack, the tabular Q-learning produced better policies across the board. I suspect that the Deep-Q version is probably an overkill for this game, and to produce good results further hyper-params adjustments would be needed.\nThe best trained policies results are shown in the picture below (see Section 4.4 in the project report).\n\n\n\n\n\n\n\nOne of the most interesting part when doing this training is to see how the agent’s policy evolves overtime. And that evolution is visualized and shown in Appendix A of the report."
+  },
+  {
+    "objectID": "posts/llm-kv-cache-quantization/index.html",
+    "href": "posts/llm-kv-cache-quantization/index.html",
+    "title": "A good intro to Key-Value Cache and Quantization",
+    "section": "",
+    "text": "I stumbled upon these blog posts while trying to read up on Key-Value cache in LLMs. I think they’re short, well-explained and provide a good high-level overivew so I recommend them here.\n\nGood entry for understanding Key-value cache in Transformers: https://huggingface.co/blog/optimize-llm#32-the-key-value-cache (Sept 2023)\nGood entry for understanding quantization of LLM models: https://huggingface.co/blog/optimize-llm#1-harnessing-the-power-of-lower-precision (same article as in 1.)\n\nIn particular, this section makes it clear that quantization helps reduce the required GPU memory for running LLMs, at the cost of a slower inference speed, because quantized values need to be converted back and forth to fp16 / bf16.\n\n\nIn the same HuggingFace article is a link to the Illustrated GPT2 post (Aug 2019).\n\nThis is a really good and detailed post - probably by far the most detailed explanation of how decoding works in Transformer architecture that I’ve read.\nIt also helped me better grasp some more details of Transformer. It also explains why for generation-related tasks (including translation, summarization, etc.), the decoder part is sufficient (and using a full encoder-decoder is probably unnecessary).\nI think this post + the original Transformer paper (2017) make for a complete intro to the transformer architecture.\nThe part explaining decoding, combined with the HF link #1 above, help make the KV cache clear.\n\nAll in all, a great post from HF as an entry point to understand KV Cache and Quantization."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hung Hoang AI Blog",
+    "section": "",
+    "text": "A Transformer model to auto insert Vietnamese accent marks\n\n\n\n\n\n\n\nvietnamese accent marks\n\n\nfinetuned xlm-roberta\n\n\n\n\nFinetuning XLM-Roberta to auto insert Vietnamese accent marks (diacritics)\n\n\n\n\n\n\nSep 3, 2024\n\n\nHung Hoang\n\n\n\n\n\n\n  \n\n\n\n\nA simple game to predict people’s “random” selections\n\n\n\n\n\n\n\nrandom\n\n\nthoughts\n\n\npredictions\n\n\nscikitlearn\n\n\nDecision tree\n\n\nMLP\n\n\nSVM\n\n\n\n\nCan we really think randomly?\n\n\n\n\n\n\nJun 2, 2024\n\n\nHung Hoang\n\n\n\n\n\n\n  \n\n\n\n\nOptimizing Blackjack games with Tabular and Deep Q-learning\n\n\n\n\n\n\n\nBlackjack\n\n\nQ-Learning\n\n\nDeep Q\n\n\nReinforcement learning\n\n\n\n\nTrain an RL agent to play Blackjack using Tabular and Deep Q-learning\n\n\n\n\n\n\nMay 30, 2024\n\n\nHung Hoang\n\n\n\n\n\n\n  \n\n\n\n\nFinetuning for Natural Language Inference\n\n\n\n\n\n\n\nfinetuning\n\n\nmBERT\n\n\nmDeberta-V3\n\n\nFlan-T5\n\n\nKaggle\n\n\n\n\nFinetuning pretrained language models for Natural Language Inference\n\n\n\n\n\n\nFeb 7, 2024\n\n\nHung Hoang\n\n\n\n\n\n\n  \n\n\n\n\nLlama-2 vs GPT models on GEC\n\n\n\n\n\n\n\nllms\n\n\nllama2\n\n\ngpt\n\n\ngec\n\n\n\n\nEvaluating Llama-2 and GPT models on the Grammatical Errors Correction Task\n\n\n\n\n\n\nFeb 6, 2024\n\n\nHung Hoang\n\n\n\n\n\n\n  \n\n\n\n\nA good intro to Key-Value Cache and Quantization\n\n\n\n\n\n\n\nllms\n\n\ntransformer\n\n\n\n\nIntroduction to KV Cache and Quantization of LLMs\n\n\n\n\n\n\nJan 4, 2024\n\n\nHung Hoang\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/compare-llama2-gpt-on-gec-task/index.html",
+    "href": "posts/compare-llama2-gpt-on-gec-task/index.html",
+    "title": "Llama-2 vs GPT models on GEC",
+    "section": "",
+    "text": "For an ML course during my Msc study, I did a rather interesting project on evaluating Llama-2 models (7B, 13B and 70B versions) and GPT models (GPT3.5, GPT4 and GPT4-Preview) on the Grammatical Errors Correction (GEC) Task.\nYou can read my project report in this pdf. But below are a few key takeaways:\n\nAlthough we usually think of LLMs, esp. GPT3.5 onwards, as having mastered the art of writing, and therefore, can correct grammar / vocabulary mistakes with ease. There is no doubt about that, but to evaluate their accuracy using existing benchmarks turned out to be difficult. The main reason was that LLMs’ corrections are more unpredicatable, at least from the view of the Test set. This created a lot of false positives → adversely affected both precision and recall.\nI used the ERRANT toolkit and 400 sentences taken from the Dev set of the BEA 2019 Shared Task for evaluation. The results showed that they were “mediocre” GEC systems. This highlights the challenge of measuring accuracy of LLMs. Below is Table 6 from the report, indicating the highest F0.5 obtained.\n\n\n\n\n\n\nAnother big takeaway from this project for me was a better appreciation of the challenge in benchmarking LLMs. Compared to previous generations of “in-the-box” models, LLMs are much more challenging to measure."
+  },
+  {
+    "objectID": "posts/vietnamese-accent-finetuned-roberta/index.html",
+    "href": "posts/vietnamese-accent-finetuned-roberta/index.html",
+    "title": "A Transformer model to auto insert Vietnamese accent marks",
+    "section": "",
+    "text": "This project was completed quite some time ago but the model wasn’t published yet. And now I’m glad this model is now available on HuggingFace hub here.\nThis model was finetuned based on XLM-Roberta (multilingual Roberta), a Transformer encoder, for the task of inserting Vietnamese accent marks.\nThis accent marks insertion was modelled as a token classification where the assigned label corresponds to the necessary transformation to insert accents.\nThe HF model page linked to above also contains detailed instructions on how to use the model from input to output."
+  },
+  {
+    "objectID": "posts/finetuning-for-nli/index.html",
+    "href": "posts/finetuning-for-nli/index.html",
+    "title": "Finetuning for Natural Language Inference",
+    "section": "",
+    "text": "This was another project I did for an AI course during my Msc study. In this project, I decided to work on finetuning pretrained language models for multilingual Natural Language Inference (NLI).\nThe context and data for this project were based on this Kaggle competition.\nYou can read my project report in full here. Below are a few interesting takeaways:\n\nThis project was the first time I worked with Flan-T5 and mDeberta-V3 models. I’d recently heard about them and thought this would be a good chance to try them out. In this project, mDeberta-V3 performed very well, and consistently so across all evaluated languages (there were 15 of them). Surprisingly, Flan-T5, which was multilingual by pretraining, performed ok, but not as well as mDeberta. This was something I still haven’t known exactly why.\nAnother issue that’s still unknown was that somehow the finetuning didn’t work for XLM-Roberta, with which I had previously obtained decent finetuning results in some previous projects.\nApart from the above 2 points, everything went as expected. The best results were obtained using an ensemble of fintuned mDeberta-V3 and fintuned Flan-T5 Large. The picture below showed this result:\n\n\n\n\n\n\nIf you’re interested in this topic, the full report is available here."
+  }
+]
